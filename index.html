@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content
+        must come *after* these tags -->
+        <title>simplemenu</title>
+
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+        <link href="css/simplemenu.css" rel="stylesheet">
+        <link href="js/prism/prism.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media
+        queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]> <script
+        src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> <script
+        src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>simplemenu</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a>關於simplemenu</a>
+                        </li>
+                        <li>
+                            <a>如何安裝</a>
+                        </li>
+                        <li>
+                            <a>展示 Demo</a>
+                        </li>
+                        <li>
+                            <a>mit license</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>關於simplemenu</h2>
+                            <div class="description">
+                                關於下拉選單的幾個ＵＩ選項,因為工作上常常有需要用到下拉選單,我希望可以不用每次都要寫一次,而是想要一個健全的版本可以讓我套用.<br>
+
+                                最常遇到的問題每一個階層連結的目錄要連到該分類或者是展開子分類,同時並存又該怎麼解決<br>
+
+                                我將工作中遇到需要解決的問題歸納為以下幾項：
+                                <ol>
+                                    <li>
+                                        點擊目錄的時候直接連結,或是展開子目錄
+                                    </li>
+                                    <li>
+                                        連結分類目錄與展開下拉選單的功能同時並存.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>點擊目錄直接連結或展開子目錄</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 info-area">
+                            <div class="description">
+                                <h3>點擊目錄直接連結</h3>
+                                直接的話其實程式並不需要做任何客制,但是有一點必須考量進去,那就是展開所在的目錄,套件預設的內容是展開當前所在的分類,只要你有將所在目錄下一個current
+                                所代表的css,他就會預設展開.
+                            </div>
+                            <div class="title">
+                                程式碼
+                            </div>
+                            <pre class="language-js"><code class="language-js">$("#menu_1").simplemenu({usingbtn: false});</code></pre>
+                        </div>
+                        <div class="col-md-6 demo-area">
+                            <h4>Demo</h4>
+                            <ul id="menu_1" class="simple_menu">
+                                    <li class="active">
+                                        <a href="https://www.google.com" target="_blank">階層1-1</a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-1-1</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-1-1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-1-2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-1-3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-1-4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="active">
+                                                <a href="https://www.google.com" target="_blank">階層1-1-2</a>
+                                                <ul>
+                                                    <li class="active">
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-2-1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-2-2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-2-3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-2-4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-1-3</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-1-4</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com" target="_blank">階層1-2</a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-2-1</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-1-1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-1-2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-1-3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-1-4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-2-2</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-2-1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-2-2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-2-3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-2-4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-2-3</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-2-4</a>
+                                            </li>
+                                        </ul>
+    
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com" target="_blank">階層1-3</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com" target="_blank">階層1-4</a>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 info-area">
+                            <div class="description">
+                                <h3>點擊目錄直接展開子目錄</h3>
+                                點擊目錄要直接展開子目錄的時候,需要取消原本預設的連結事件,變成展開子目錄,此刻也不需要按鈕,但加上按鈕可以增加狀態的識別.所以分成兩個部分展示
+                            </div>
+                            <div class="title">
+                                程式碼(沒按鈕)
+                            </div>
+<pre class="language-js"><code class="language-js">$("#menu_1").simplemenu({ 
+    usingbtn:false, 
+    directorylink: false
+});</code></pre>
+                        </div>
+                        <div class="col-md-6 demo-area">
+                                <h4>Demo</h4>
+                                <ul id="menu_2" class="simple_menu">
+                                        <li class="active">
+                                            <a href="https://www.google.com" target="_blank">階層1-1</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-1-1</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-1-1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-1-2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-1-3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-1-4</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="active">
+                                                    <a href="https://www.google.com" target="_blank">階層1-1-2</a>
+                                                    <ul>
+                                                        <li class="active">
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-2-1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-2-2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-2-3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-1-2-4</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-1-3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-1-4</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.google.com" target="_blank">階層1-2</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-2-1</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-1-1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-1-2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-1-3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-1-4</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-2-2</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-2-1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-2-2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-2-3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.google.com" target="_blank">階層1-2-2-4</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-2-3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.google.com" target="_blank">階層1-2-4</a>
+                                                </li>
+                                            </ul>
+        
+                                        </li>
+                                        <li>
+                                            <a href="https://www.google.com" target="_blank">階層1-3</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.google.com" target="_blank">階層1-4</a>
+                                        </li>
+                                    </ul>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6 info-area">
+                                <div class="title">
+                                    程式碼(有按鈕)
+                                </div>
+    <pre class="language-js"><code class="language-js">$("#menu_1").simplemenu({
+        directorylink: false
+    });</code></pre>
+                            </div>
+                            <div class="col-md-6 demo-area">
+                                    <h4>Demo</h4>
+                                    <ul id="menu_3" class="simple_menu">
+                                            <li class="active">
+                                                <a href="https://www.google.com" target="_blank">階層1-1</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-1</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-1-1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-1-2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-1-3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-1-4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-2</a>
+                                                        <ul>
+                                                            <li class="active">
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-2-1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-2-2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-2-3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-1-2-4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-1-4</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-2</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-1</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-1-1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-1-2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-1-3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-1-4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-2</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-2-1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-2-2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-2-3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://www.google.com" target="_blank">階層1-2-2-4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://www.google.com" target="_blank">階層1-2-4</a>
+                                                    </li>
+                                                </ul>
+            
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-3</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.google.com" target="_blank">階層1-4</a>
+                                            </li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>連結分類目錄與展開下拉選單的功能同時並存.</h3>
+                            如果我們必須兩樣同時並存,目前預設的辦法是增加icon,透過icon的點擊展開目錄,或者是直接點選連結展開目錄
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed
+        -->
+        <!-- Latest compiled and minified JavaScript -->
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <script src="js/simplemenu.js"></script>
+        <script src="js/prism/prism.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#menu_1").simplemenu({usingbtn: false});
+                $("#menu_2").simplemenu({usingbtn: false,directorylink:false});
+                $("#menu_3").simplemenu({directorylink:false});
+            });
+        </script>
+    </body>
+
+</html>
+
+<!--
+    <ul id="menu_1" class="simple_menu">
+                                <li class="active">
+                                    <a href="">階層1-1</a>
+                                    <ul>
+                                        <li>
+                                            <a href="">階層1-1-1</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="">階層1-1-1-1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-1-1-2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-1-1-3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-1-1-4</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="active">
+                                            <a href="">階層1-1-2</a>
+                                            <ul>
+                                                <li class="active">
+                                                    <a href="">階層1-1-2-1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-1-2-2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-1-2-3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-1-2-4</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="">階層1-1-3</a>
+                                        </li>
+                                        <li>
+                                            <a href="">階層1-1-4</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">階層1-2</a>
+                                    <ul>
+                                        <li>
+                                            <a href="">階層1-2-1</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="">階層1-2-1-1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-2-1-2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-2-1-3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-2-1-4</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="">階層1-2-2</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="">階層1-2-2-1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-2-2-2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-2-2-3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">階層1-2-2-4</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="">階層1-2-3</a>
+                                        </li>
+                                        <li>
+                                            <a href="">階層1-2-4</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a href="">階層1-3</a>
+                                </li>
+                                <li>
+                                    <a href="">階層1-4</a>
+                                </li>
+                            </ul>
+-->
