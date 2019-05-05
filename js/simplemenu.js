@@ -1,3 +1,27 @@
+/***************
+MIT License
+
+Copyright (c) 2019 謝秉錡
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*************/
+
 "use strict";
 $.fn.simplemenu = function(options) {
   // This is the easiest way to have default options.
@@ -5,15 +29,15 @@ $.fn.simplemenu = function(options) {
     {
       usingbtn: true,
       directorylink: true,
+      autoopen:true,
       custombtnname: "openmenu",
       currentcss:'active',
-      autoopen:true,
       customicon:'<div class="simplemenu-normal-icon"><span></span><span></span></div>'
     },
     options
   );
 
-  var btnclassname = settings.custombtnname,
+  var custombtnname = settings.custombtnname,
       directorylink = settings.directorylink,
       usingbtn = settings.usingbtn,
       currentcss = settings.currentcss,
@@ -25,14 +49,14 @@ $.fn.simplemenu = function(options) {
     //build icon
     if ($(this).siblings("ul").length > 0) {
       $(this)
-        .append('<span class="' + btnclassname + '">'+customicon+'</span>')
+        .append('<span class="' + custombtnname + '">'+customicon+'</span>')
         .parent()
         .addClass("has-submenu");
     }
 
     //setting event
     $(this)
-      .find("." + btnclassname)
+      .find("." + custombtnname)
       .on("click", function(event) {
         event.preventDefault(); //取消預設事件
         event.stopPropagation(); //終止事件傳導
