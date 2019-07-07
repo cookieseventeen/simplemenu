@@ -30,6 +30,7 @@ $.fn.simplemenu = function(options) {
       usingbtn: true,
       directorylink: true,
       autoopen:true,
+      disableclass:'disablethis',
       custombtnname: "openmenu",
       currentcss:'active',
       customicon:'<div class="simplemenu-normal-icon"><span></span><span></span></div>'
@@ -42,7 +43,8 @@ $.fn.simplemenu = function(options) {
       usingbtn = settings.usingbtn,
       currentcss = settings.currentcss,
       autoopen= settings.autoopen,
-      customicon= settings.customicon;
+      customicon= settings.customicon,
+      disableclassname= settings.disableclass;
 
   
   this.find("a").each(function() {
@@ -63,15 +65,19 @@ $.fn.simplemenu = function(options) {
         
         var _this_parent_li=$(this).parent('a').parent('li');
       
-        if(_this_parent_li.hasClass(currentcss)){
-          //如果已經展開 轉回關閉 連同子選單一起
-          _this_parent_li.removeClass(currentcss).children('ul').slideUp().find('.'+currentcss).removeClass(currentcss).children('ul').slideUp();
+        if(!_this_parent_li.hasClass(disableclassname)){
+          if(_this_parent_li.hasClass(currentcss)){
+            //如果已經展開 轉回關閉 連同子選單一起
+            _this_parent_li.removeClass(currentcss).children('ul').slideUp().find('.'+currentcss).removeClass(currentcss).children('ul').slideUp();
+          }else{
+            //如果還沒展開 展開這一層
+            _this_parent_li.addClass(currentcss).children('ul').slideDown();
+            //關閉其他階層的選單
+            _this_parent_li.siblings().removeClass(currentcss).children('ul').slideUp().find('.'+currentcss).removeClass(currentcss).children('ul').slideUp();
+          }  
         }else{
-          //如果還沒展開 展開這一層
-          _this_parent_li.addClass(currentcss).children('ul').slideDown();
-          //關閉其他階層的選單
-          _this_parent_li.siblings().removeClass(currentcss).children('ul').slideUp().find('.'+currentcss).removeClass(currentcss).children('ul').slideUp();
-        }  
+          return false;
+        }
       });
   });
 
