@@ -56,19 +56,12 @@ h3 span {
   padding: 0;
 }
 
-.simple_menu .nobtn > a > span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: auto;
-  height: auto;
+.simple_menu .nobtn > a > .openmenu {
   opacity: 0;
   display: none;
 }
 
-.simple_menu .nodirectorylink > a > span {
+.simple_menu .nodirectorylink > a > .openmenu {
   position: absolute;
   left: 0;
   right: 0;
@@ -101,25 +94,50 @@ h3 span {
   text-decoration: none;
 }
 
-.simple_menu a span {
+.simple_menu a .openmenu {
   display: block;
   width: 50px;
   height: 56px;
+  max-height: 100%;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 2;
 }
 
-.simple_menu a span:before {
-  content: '+';
-  line-height: 1;
+.simple_menu a .openmenu .simplemenu-normal-icon {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  right: 0;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.simple_menu a .openmenu .simplemenu-normal-icon span:nth-child(1), .simple_menu a .openmenu .simplemenu-normal-icon span:nth-child(2) {
+  content: '';
   display: block;
   position: absolute;
-  right: 20px;
+  background: #666;
+  left: 50%;
   top: 50%;
-  -webkit-transform: translateY(-58%);
-          transform: translateY(-58%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.simple_menu a .openmenu .simplemenu-normal-icon span:nth-child(1) {
+  width: 20px;
+  height: 1px;
+}
+
+.simple_menu a .openmenu .simplemenu-normal-icon span:nth-child(2) {
+  width: 1px;
+  height: 20px;
+}
+
+.simple_menu li.active > a .openmenu .simplemenu-normal-icon {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .simple_menu > li {

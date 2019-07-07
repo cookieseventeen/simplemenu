@@ -51,7 +51,7 @@ $.fn.simplemenu = function(options) {
     //build icon
     if ($(this).siblings("ul").length > 0) {
       $(this)
-        .append('<span class="' + custombtnname + '">'+customicon+'</span>')
+        .append('<div class="' + custombtnname + '">'+customicon+'</div>')
         .parent()
         .addClass("has-submenu");
     }
