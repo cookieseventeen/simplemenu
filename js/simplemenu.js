@@ -79,6 +79,15 @@ $.fn.simplemenu = function(options) {
           return false;
         }
       });
+
+      // 增加disable 選項
+      $(this).on('click',function(event){
+        if($(this).parent('li').hasClass(disableclassname)){
+          event.preventDefault(); //取消預設事件
+          return false;
+        }
+      });
+
   });
 
   if (!usingbtn) {
