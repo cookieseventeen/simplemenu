@@ -92,7 +92,8 @@
         usingbtn: true,//是否需要按鈕,不需要則為fasle
         directorylink: true,//目錄是否可以連結,不需要則為fasle
         autoopen:true,//載入時是否展開當前目錄
-        custombtnname: "openmenu",//按鈕客製css name
+        disableclass:'disablethis',//設定取消反應的class name
+        custombtnname: "openmenu",//按鈕客製css name,
         currentcss:'active',//當前menu 的css name
         customicon:'&lt;div class="simplemenu-normal-icon"&gt;&lt;span>&lt;/span&gt;&lt;span>&lt;/span&gt;&lt;/div&gt;'//假設你需要客製
     });</code></pre>
@@ -147,7 +148,7 @@
                                             </ul>
                                         </li>
                                         <li  class="disablethis">
-                                            <a href="https://www.google.com" target="_blank">階層1-2</a>
+                                            <a href="https://www.google.com" target="_blank">階層1-2（我有設定disable class name）</a>
                                             <ul>
                                                 <li>
                                                     <a href="https://www.google.com" target="_blank">階層1-2-1</a>
